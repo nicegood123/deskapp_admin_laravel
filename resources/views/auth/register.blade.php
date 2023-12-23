@@ -18,29 +18,13 @@
     @include('partials.styles')
 </head>
 
-<body class="login-page">
-    {{-- Login Header --}}
-    <div class="login-header box-shadow">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <div class="brand-logo">
-                <a href="/">
-                    <img src="{{ asset('assets/vendors/images/deskapp-logo.svg') }}" alt="" />
-                </a>
-            </div>
-            <div class="login-menu">
-                <ul>
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-4 col-md-7">
-                    <div class="card bg-white box-shadow border-radius-10 pl-20 pr-20">
-                        <h4 class="text-center text-primary pt-30 pb-20">Create Account</h4>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col-xl-4 col-lg-5 col-md-6">
+                <div class="card shadow border-0 border-radius-10 pt-4 pb-5 px-4">
+                    <div class="d-flex flex-column">
+                        <h4 class="text-center text-primary mb-3">Create Account</h4>
 
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
@@ -97,14 +81,9 @@
                                             type="password">
                                     </div>
                                 </div>
-
-
-
-
-
                             </div>
 
-                            <div class="row pb-30">
+                            <div class="row">
                                 <div class="col-12">
                                     <div class="input-group">
                                         <button type="submit" class="btn btn-primary btn-lg btn-block">
@@ -114,6 +93,15 @@
                                 </div>
                             </div>
                         </form>
+
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                Already have an account?
+                                <a href="{{ route('login') }}">
+                                    <span class="text-primary">Login here.</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

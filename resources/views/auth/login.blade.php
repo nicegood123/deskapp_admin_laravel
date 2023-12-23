@@ -89,16 +89,16 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                <div class="col-12 text-center">
-                                    Don't have an account yet?
-                                    <a href="{{ route('register') }}">
-                                        <span class="weight-600">Register here.</span>
-                                    </a>
-                                </div>
-                            </div>
                         </form>
+
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                Don't have an account yet?
+                                <a href="{{ route('register') }}">
+                                    <span class="text-primary">Register here.</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
