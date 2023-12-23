@@ -18,34 +18,14 @@
     @include('partials.styles')
 </head>
 
-<body class="login-page">
-    {{-- Login Header --}}
-    <div class="login-header box-shadow">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <div class="brand-logo">
-                <a href="login.html">
-                    <img src="{{ asset('assets/vendors/images/deskapp-logo.svg') }}" alt="" />
-                </a>
-            </div>
-            <div class="login-menu">
-                <ul>
-                    <li><a href="{{ route('register') }}">Register</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center vh-100">
+            <div class="col-xl-4 col-lg-5 col-md-6">
+                <div class="card shadow border-0 border-radius-10 pt-4 pb-5 px-4">
+                    <div class="d-flex flex-column">
+                        <h4 class="text-center text-primary mb-3">Login To DeskApp</h4>
 
-    <div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 col-lg-7">
-                    <img src="{{ asset('assets/vendors/images/login-page-img.png') }}" alt="" />
-                </div>
-                <div class="col-md-6 col-lg-5">
-                    <div class="login-box bg-white box-shadow border-radius-10">
-                        <div class="login-title">
-                            <h2 class="text-center text-primary">Login To DeskApp</h2>
-                        </div>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="row">
@@ -54,7 +34,7 @@
                                         <label id="email">Email</label>
                                         <input id="email" name="email"
                                             class="form-control @error('email') is-invalid @enderror"
-                                            value="{{ old('email') }}" type="email">
+                                            value="{{ old('email') }}" type="email" autofocus>
 
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -81,35 +61,41 @@
                             </div>
 
 
-                            <div class="row pb-30">
+                            <div class="row pb-10">
                                 {{-- <div class="col-6">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck1" />
                                         <label class="custom-control-label" for="customCheck1">Remember</label>
                                     </div>
                                 </div> --}}
+
                                 <div class="col-12">
                                     @if (Route::has('password.request'))
                                         <div class="forgot-password">
-                                            <a href="{{ route('password.request') }}">Forgot Password</a>
+                                            <a href="{{ route('password.request') }}">
+                                                Forgot Password?
+                                            </a>
                                         </div>
                                     @endif
                                 </div>
                             </div>
+
                             <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="input-group mb-0">
+                                <div class="col-12">
+                                    <div class="input-group">
                                         <button type="submit" class="btn btn-primary btn-lg btn-block">
                                             Login
                                         </button>
                                     </div>
-                                    <div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">
-                                        OR
-                                    </div>
-                                    <div class="input-group mb-0">
-                                        <a class="btn btn-outline-primary btn-lg btn-block"
-                                            href="register.html">Register To Create Account</a>
-                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    Don't have an account yet?
+                                    <a href="{{ route('register') }}">
+                                        <span class="weight-600">Register here.</span>
+                                    </a>
                                 </div>
                             </div>
                         </form>
