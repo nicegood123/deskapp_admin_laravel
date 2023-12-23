@@ -2,7 +2,7 @@
 
 @section('main-content')
     <div class="title pb-20">
-        <h2 class="h3 mb-0">Dashboard</h2>
+        <h2 class="h3 mb-0">Users</h2>
     </div>
 
     <div class="row">
