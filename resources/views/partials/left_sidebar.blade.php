@@ -19,7 +19,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('dashboard.index') }}"
+                    <a href="{{ route('users.index') }}"
                         class="dropdown-toggle no-arrow {{ Request::is('users') ? 'active' : '' }}">
                         <i class="micon bi bi-people"></i>
                         <span class="mtext">Users</span>

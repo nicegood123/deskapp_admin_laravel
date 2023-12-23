@@ -20,3 +20,6 @@ Auth::routes();
 
 // Dashboard Routes
 require __DIR__ . '/web/dashboard/dashboard.php';
+
+// Users Routes
+require __DIR__ . '/web/users/users.php';
