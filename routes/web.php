@@ -1,19 +1,22 @@
 <?php
 
+use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
 
-
+// Redirect Routes
 Route::middleware('auth')->group(function () {
     Route::get('/', function () {
-        return redirect(route('home'));
+        return redirect(route('dashboard.index'));
     });
 
-    Route::get('/home', function () {
-        return redirect(route('home'));
+    Route::get('/dashboard', function () {
+        return redirect(route('dashboard.index'));
     });
 });
 
 // Auth Routes
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Dashboard Routes
+require __DIR__ . '/web/dashboard/dashboard.php';
